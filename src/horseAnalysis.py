@@ -3,7 +3,7 @@ import subprocess as sp
 import sys
 import shutil
 
-import urllib.request
+# import urllib.request
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 import requests
@@ -49,7 +49,7 @@ def main():
         df = df.drop(columns=["着差", "単勝", "人気", "距離",
         "ランク", "芝orダート", "馬体重", "枠番", "年齢"])
         pd.set_option('display.max_rows', None)
-        print(df)
+        # print(df)
         fig, ax = plt.subplots(figsize=(10, 5))
 
         ax.axis('off')
@@ -61,8 +61,10 @@ def main():
         table.auto_set_font_size(False)
         table.set_fontsize(8)
         table.scale(2, 2)
-
-        plt.savefig("result.png")
+        if bool(sys.argv[4]) == True:
+            plt.savefig(sys.argv[4]+"result.png")
+        else:
+            plt.savefig("result.png")
         plt.show()
 
     elif int(sys.argv[1]) == 2:
@@ -77,7 +79,10 @@ def main():
         fig, ax = plt.subplots()
         ax.plot(df_2["year"], df_2["time_scond"])
         ax.set_title(sys.argv[2]+"のレースタイム")
-        plt.savefig("result.png")
+        if bool(sys.argv[3]) == True:
+            plt.savefig(sys.argv[3]+"result.png")
+        else:
+            plt.savefig("result.png")
         plt.show()
 
 # print(df)

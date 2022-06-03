@@ -5,15 +5,15 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="horseAnalysis",
-    version="0.0.1",
+    version="0.0.6",
     author="Shota Tamaru",
     author_email="s2022022@stu.musashino-u.ac.jp",
     description="The system can look up and analyze a horse's history of running famous races.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ytakefuji/defense",
+    url="https://github.com/tama2101-s/horseAnalysis",
     project_urls={
-        "Bug Tracker": "https://github.com/ytakefuji/defense",
+        "Bug Tracker": "https://github.com/tama2101-s/horseAnalysis",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
